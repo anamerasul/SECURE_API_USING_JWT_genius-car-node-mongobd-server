@@ -232,12 +232,11 @@
 //     console.log("Listening to port", port)
 // })
 
-import 'dotenv/config'
-import express from 'express'
-import cors from "cors";
-import { MongoClient, ServerApiVersion, ObjectId } from 'mongodb';
-import jwt from 'jsonwebtoken'
-import crypto from 'crypto';
+const express = require('express');
+const cors = require('cors');
+const jwt = require('jsonwebtoken');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+require('dotenv').config();
 
 const app = express()
 const port = process.env.PORT || 5000;
