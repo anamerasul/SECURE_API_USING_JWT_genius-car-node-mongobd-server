@@ -298,7 +298,9 @@ function verifyJWT(req, res, next) {
 
 
 
-const uri = `mongodb+srv://${process.env.DB_user}:${process.env.DB_pass}@cluster0.hprqj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+// const uri = `mongodb+srv://${process.env.DB_user}:${process.env.DB_pass}@cluster0.hprqj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+const uri = `mongodb+srv://ANAMERASUL007:ANAMERASUL007@cluster0.hprqj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 // client.connect(err => {
 //     const collection = client.db("test").collection("devices");
