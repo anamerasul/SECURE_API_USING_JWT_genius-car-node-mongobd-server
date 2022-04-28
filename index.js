@@ -284,7 +284,7 @@ function verifyJWT(req, res, next) {
     const token = authHeader.split(' ')[0];
     console.log(token);
 
-    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+    jwt.verify(token, crypto.randomBytes(64).toString('hex'), (err, decoded) => {
         if (err) {
             return res.status(403).send({ message: 'Forbidden access' });
         }
@@ -331,7 +331,7 @@ const run = async () => {
 
 
 
-            const accessToken = jwt.sign(user, process.env.NODE_ACCESS_JWT_TOKEN_SECRET, {
+            const accessToken = jwt.sign(user, crypto.randomBytes(64).toString('hex'), {
                 expiresIn: '1d'
             })
             res.send(accessToken)
